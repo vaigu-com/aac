@@ -526,6 +526,14 @@ if (isset($config['boxes']))
                                                target="new"><span class="InfoBarSmallElement">Facebook</span></a>
                                         </span>
                                     <?php } ?>
+                                    <?php if (!empty($config['github_link'])) { ?>
+                                        <img class="InfoBarBigLogo" style="margin-left: 8px"
+                                             src="<?= $template_path; ?>/images/global/header/icon-github.png">
+                                        <span class="InfoBarNumbers">
+                                            <a class="InfoBarLinks" href="<?= $config['github_link']; ?>" target="new"><span
+                                                        class="InfoBarSmallElement">GitHub</span></a>
+                                        </span>
+                                    <?php } ?>
                                     <span style="float: right; margin-top: 1px; margin-right: 4px">
                                         <img class="InfoBarBigLogo" src="<?= $template_path; ?>/images/global/header/icon-players-online.png">
                                         <span class="InfoBarNumbers">
@@ -691,7 +699,7 @@ if (isset($config['boxes']))
 
             <div id="ThemeboxesColumn">
                 <?php
-                $creaturequery = $db->query("SELECT `boostname`, `looktype`, `lookfeet` , `looklegs` , `lookhead` , `lookbody` , `lookaddons` , `lookmount`   FROM `boosted_creature`")->fetch();
+                $creaturequery = $db->query("SELECT `boostname`, `looktype`, `lookfeet` , `looklegs` , `lookhead` , `lookbody` , `lookaddons` , `lookmount`   FROM `boosted_creature` WHERE `weekdays` = 1")->fetch();
                 $creaturename = $creaturequery["boostname"];
                 $creaturetype = $creaturequery["looktype"];
                 $creaturefeet = $creaturequery["lookfeet"];
@@ -839,7 +847,7 @@ function getImageMenuRandom($menu): string
     }
 
     $images = [
-        'bgs'            => ['00.jpg', '01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg'],
+        'bgs'            => ['07.jpg'],
         'news'           => ['icon-news01.gif', 'icon-news02.gif', 'icon-news03.gif', 'icon-news04.gif', 'icon-news05.gif', 'icon-news06.gif'],
         'community'      => ['icon-community01.gif', 'icon-community02.gif', 'icon-community03.gif', 'icon-community04.gif', 'icon-community05.gif', 'icon-community06.gif', 'icon-community07.gif', 'icon-community08.gif'],
         'forum'          => ['icon-forum01.gif', 'icon-forum02.gif', 'icon-forum03.gif', 'icon-forum04.gif', 'icon-forum05.gif', 'icon-forum06.gif', 'icon-forum07.gif', 'icon-forum08.gif', 'icon-forum09.gif', 'icon-forum10.gif'],

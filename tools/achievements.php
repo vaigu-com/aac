@@ -429,7 +429,7 @@ $achievements = [
     'grade' => 1,
     'points' => 1,
     'description' =>
-      "You don't believe in romance to be a coincidence or in love at first sight . In fact - love potions, bouquets of flowers and cheesy poems do the trick much better than ever could . Keep those hormones flowing!",
+      "You don't believe in romance to be a  or in love at first sight . In fact - love potions, bouquets of flowers and cheesy poems do the trick much better than ever could . Keep those hormones flowing!",
   ],
   '59' => [
     'name' => 'Mathemagician',

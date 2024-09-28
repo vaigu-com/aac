@@ -76,7 +76,7 @@ switch ($action) {
     die(json_encode(['eventlist' => $eventlist, 'lastupdatetimestamp' => time()]));
 
   case 'boostedcreature':
-    $creatureBoost = $db->query("SELECT * FROM " . $db->tableName('boosted_creature'))->fetchAll();
+    $creatureBoost = $db->query("SELECT * FROM " . $db->tableName('boosted_creature'). "WHERE weekdays = 1")->fetchAll();
     $bossBoost     = $db->query("SELECT * FROM " . $db->tableName('boosted_boss'))->fetchAll();
     die(json_encode([
       'boostedcreature' => true,
